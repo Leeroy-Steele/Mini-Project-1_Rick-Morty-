@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"crossorigin="anonymous"></script>
+        
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+
+    <body class="selectionPageBody" onload="setCards()">
+        <div class="container">
+            <div class="text-center p-3 opacityContainer" style="min-width: 460px;"> <!--Heading-->>
+                <h1>Rick and Morty</h1>
+                <h3 class="pb-2">Character Cards</h3>
+                <div class=" "></div>
+                <a href="index.html"><button type="button" class="btn btn-dark" >Back</button></a>
+                <a href="stats.html"><button type="button" class="btn btn-dark">Stats</button></a>
+
+                <button onclick="shuffle()"  type="button" class="btn btn-dark">Shuffle</button>
+                <button onclick="toogleHover()" type="button" class="btn btn-dark" id="hoverButton">Hover</button>
+
+                <br>
+      
+                <button onclick="addCard(1)" type="button" class="btn btn-dark btnBottom">+1</button>
+                <button onclick="addCard(5)" type="button" class="btn btn-dark btnBottom">+5</button>
+                <button onclick="addCard(20)"  type="button" class="btn btn-dark btnBottom">+20</button>
+                <button onclick="removeCard(20)"  type="button" class="btn btn-dark btnBottom">-20</button>
+                <button onclick="removeCard(5)" type="button" class="btn btn-dark btnBottom">-5</button>
+                <button onclick="removeCard(1)" type="button" class="btn btn-dark btnBottom">-1</button>
+
+            </div>
+        </div> 
+
+        
+        
+        <template id="card-portfolio">     <!-- Cards template-->
+          
+                <div class="card m-1">
+                    <div class="text-center">
+                        <h5 class="card-title"></h5>
+                        <img class="card-image" style="width:100%" >
+                        <table class="table table-light table-hover">
+
+                            <tr>
+                                <td>Status:</td>
+                                <td class="card-status"></td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Species:</td>
+                                <td class="card-species"></td>
+                            </tr>
+
+                            <tr>
+                                <td>Origin:</td>
+                                <td class="card-origin"></td>
+                            </tr>
+
+                            <tr>
+                                <td>Gender:</td>
+                                <td class="card-gender"></td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Episodes:</td>
+                                <td class="card-episodes"></td>
+                            </tr>
+                            
+                        </table>
+                        
+                    </div>
+              
+            </div>
+        </template>
+        
+            <div class="container">
+                <div class="cardArea">
+                <div id="card-list" class="row row-cols-1 row-cols-md-3 row-cols-lg-5 row-cols-xl-6 justify-content-center"></div>
+                </div>
+            </div>
+       
+    </body>
+
+</html>
